@@ -1,4 +1,5 @@
-import 'package:consumer/view/main_screen.dart';
+import 'package:consumer/view/list_screen.dart';
+import 'package:consumer/view/search_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,13 +13,17 @@ class Aplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'API CONSUMER',
-        theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      title: 'API CONSUMER',
+      theme: ThemeData(
 
-          primarySwatch: Colors.blue,
-        ),
-        home: const MainScreen()
+        primarySwatch: Colors.blue,
+      ),
+      initialRoute: "/buscar-passagens",
+      routes: {
+        "/buscar-passagens": (context) => const SearchScreen(),
+        "/listar-passagens": (context) => const ListScreen(),
+      },
     );
   }
 }

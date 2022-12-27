@@ -6,7 +6,7 @@ class PassagemController {
 
   PassagemController(this._repository);
 
-  Future<List<Passagem>> findAll() async{
-    return _repository.findAll();
+  Future<List<Passagem>> findAll(String origem, String destino, String ida) async{
+    return _repository.findAll(origem, destino, ida);
   }
 }

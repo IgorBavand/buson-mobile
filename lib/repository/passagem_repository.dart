@@ -8,10 +8,10 @@ class PassagensRepository implements Repository{
   //String dataUrl = "http://localhost:8080/";
 
   @override
-  Future<List<Passagem>> findAll() async{
+  Future<List<Passagem>> findAll(String origem, String destino, String ida) async{
     List<Passagem> passagens = [];
-    var url = Uri.parse("http://172.26.0.2:8080/buson?origem=joao-pessoa-pb&destino=fortaleza-ce&ida=2022-12-25");
-    print("deu certo");
+    var url = Uri.parse("http://172.26.0.2:8080/buson?origem=$origem&destino=$destino&ida=$ida");
+    print(url);
     var response  = await http.get(url);
     var body = json.decode(response.body);
 
